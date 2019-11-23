@@ -8,7 +8,7 @@ export const config: Config = {
    capabilities: {
        'browserName': 'chrome',
         chromeOptions: {
-             args: [ "--headless", "--disable-gpu" ]
+             //args: [ "--headless", "--disable-gpu" ]
        },
    },
    framework: 'jasmine',
@@ -26,9 +26,7 @@ export const config: Config = {
          }).getJasmine2Reporter());
         let globals = require('protractor');
         let browser: ProtractorBrowser = globals.browser;
-   //let browser = globals.browser;
-        await browser.waitForAngularEnabled(false);
-        // browser.ignoreSynchronization = true;
+       await browser.waitForAngularEnabled(false);
         await browser.driver.manage().window().maximize();
         await browser.driver.manage().window().setPosition(0, 0);        
         await browser.manage().timeouts().implicitlyWait(5000);
